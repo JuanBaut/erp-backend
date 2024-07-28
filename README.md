@@ -16,6 +16,12 @@ Django, PostgreSQL and Docker
   ```
 ## Important flows
 
+- Clean up older containers (will delete db entries and migrations must be run again)
+  ```bash
+  docker stop $(docker ps -aq)
+  docker rm $(docker ps -aq)
+  docker-compose down -v
+  ```
 - Run migrations for model changes
   ```bash
   docker-compose run web python manage.py makemigrations
@@ -24,12 +30,6 @@ Django, PostgreSQL and Docker
 - Open the psql shell to make queries
   ```bash
   docker-compose exec db psql -U psql -d psql
-  ```
-- Clean up older containers
-  ```bash
-  docker stop $(docker ps -aq)
-  docker rm $(docker ps -aq)
-  docker-compose down -v
   ```
 
 ## Setup for development
