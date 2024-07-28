@@ -1,7 +1,9 @@
 # erp-backend
 Django, PostgreSQL and Docker
 
-bootstrap project
+### Start the Django server and the PSQL database for the first time
 ```sh
-docker-compose run web django-admin startproject app .
+docker-compose up --build
 ```
+
+Open `http://localhost:8000/` to verify that it is running.
