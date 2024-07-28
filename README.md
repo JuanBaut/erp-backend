@@ -1,8 +1,44 @@
 # erp-backend
 Django, PostgreSQL and Docker
 
-### Start the Django server and the PSQL database for the first time
-```bash
-docker-compose up --build
-```
-- Open `http://localhost:8000/` to verify that it is running.
+## Dependencies
+- docker and docker-compose
+
+## Starting the app
+1. Build and run the container
+  ```bash
+  docker-compose up --build
+  ```
+2. Open `http://localhost:8000/` to verify that the django app is running
+3. After building just run this to start the container and remove older versions of the container
+  ```bash
+  docker-compose up --remove-orphans
+  ```
+## Important flows
+
+- Run migrations for model changes
+  ```bash
+  docker-compose run web python manage.py makemigrations
+  docker-compose run web python manage.py migrate
+  ```
+- Open the psql shell to make queries
+  ```bash
+  docker-compose exec db psql -U psql -d psql
+  ```
+- Clean up older containers
+  ```bash
+  docker stop $(docker ps -aq)
+  docker rm $(docker ps -aq)
+  docker-compose down -v
+  ```
+
+## Setup for development
+1. Create python virtual environment
+  ```bash
+  python -m venv venv
+  source venv/bin/activate
+  ```
+2. Install dependencies for lsp support
+  ```bash
+  pip install -r requirements.txt
+  ```
