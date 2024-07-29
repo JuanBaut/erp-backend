@@ -35,10 +35,9 @@ Django, PostgreSQL and Docker
 ## Setup for development
 1. Create python virtual environment
   ```bash
-  python -m venv venv
-  source venv/bin/activate
+  eval $(pdm venv activate)
   ```
 2. Install dependencies for lsp support
   ```bash
-  pip install -r requirements.txt
+  pdm install
   ```
