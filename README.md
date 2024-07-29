@@ -1,6 +1,10 @@
 # erp-backend
 Django, PostgreSQL and Docker
 
+![image](https://github.com/user-attachments/assets/9ea3895f-eece-4be4-80b0-006224ed5d47)
+![image](https://github.com/user-attachments/assets/b195e72e-1097-4f14-a2a6-7449f3776101)
+
+
 ## Dependencies
 - docker and docker-compose
 
