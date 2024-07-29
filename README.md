@@ -24,8 +24,7 @@ Django, PostgreSQL and Docker
   ```
 - Run migrations for model changes
   ```bash
-  docker-compose run web python manage.py makemigrations
-  docker-compose run web python manage.py migrate
+  docker-compose run web python pdm migrate
   ```
 - Open the psql shell to make queries
   ```bash

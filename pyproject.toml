@@ -18,6 +18,7 @@ post_init = { composite = [
 
 [tool.basedpyright]
 typeCheckingMode = "standard"
+reportIncompatibleVariableOverride = "none"
 
 [project]
 name = "erp-backend"
