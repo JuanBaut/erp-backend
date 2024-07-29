@@ -1,10 +1,22 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     depends_on:
       - db
+    volumes:
+      - ./erp_backend:/project/erp_backend
+      - ./base:/project/base
+      - ./manage.py:/project/manage.py
+      - ./pyproject.toml:/project/pyproject.toml
+      - ./pdm.lock:/project/pdm.lock
+    environment:
+      PYTHONUNBUFFERED: 1
+      PYTHONDONTWRITEBYTECODE: 1
+    command: ["pdm", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
 
   db:
     image: postgres:latest

@@ -8,13 +8,13 @@ dev = [
 ]
 
 [tool.pdm.scripts]
+makemigrations = "python manage.py makemigrations"
 migrate = "python manage.py migrate"
 start = "python manage.py runserver"
-post_init = { composite = [
-    "pdm install",
-    "migrate",
-    "start",
-] }
+dbsync.composite = [
+  "makemigrations",
+  "migrate",
+]
 
 [tool.basedpyright]
 typeCheckingMode = "standard"

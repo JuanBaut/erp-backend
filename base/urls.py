@@ -12,4 +12,9 @@ urlpatterns = [
         views.InventoryDelete.as_view(),
         name="inventory_delete_view",
     ),
+    path(
+        "transaction/",
+        views.TransactionView.as_view(),
+        name="transaction_create_view",
+    ),
 ]
