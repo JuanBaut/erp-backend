@@ -8,15 +8,14 @@ services:
     depends_on:
       - db
     volumes:
-      - ./erp_backend:/project/erp_backend
-      - ./base:/project/base
-      - ./manage.py:/project/manage.py
-      - ./pyproject.toml:/project/pyproject.toml
-      - ./pdm.lock:/project/pdm.lock
+      - ./src:/project
+      - /dev/null:/project/.pdm-python
+      - /project/.venv
+
     environment:
       PYTHONUNBUFFERED: 1
       PYTHONDONTWRITEBYTECODE: 1
-    command: ["pdm", "run", "python", "manage.py", "runserver", "0.0.0.0:8000"]
+    command: ["sh", "/project/entrypoint.sh"]
 
   db:
     image: postgres:latest
