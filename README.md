@@ -31,12 +31,12 @@ Django, PostgreSQL and Docker
   docker-compose exec db psql -U psql -d psql
   ```
 
-## Setup for development
-1. Create python virtual environment
-  ```bash
-  eval $(pdm venv activate)
-  ```
-2. Install dependencies for lsp support
+## Setup for development (after docker container setup)
+1. Install dependencies for lsp support
   ```bash
   pdm install
+  ```
+2. Create python virtual environment
+  ```bash
+  eval $(pdm venv activate)
   ```
