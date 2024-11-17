@@ -3,7 +3,7 @@ Django, PostgreSQL and Docker
 
 ---
 
-## Entregable: ¿Por qué se escogió el diseño de la base de datos?
+## ¿Por qué se escogió el diseño de la base de datos?
 - La aplicación tiene varios modelos separados por “base” donde está la lógica de negocio y “roles” donde está la lógica de los usuarios. El objetivo es poder asignar permisos a usuarios creados según sus roles para que puedan interactuar con sus funciones respectivas, por ejemplo un jefe de logística tiene acceso al modelo inventario y un contador tendría acceso al modelo de transacciones y también al inventario. 
 ![image](https://github.com/user-attachments/assets/9ea3895f-eece-4be4-80b0-006224ed5d47)
 
